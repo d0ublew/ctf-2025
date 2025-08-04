@@ -117,7 +117,9 @@ chunks = heap_base + 0x2A0
 # log.info(f"{chunks=:#x}")
 
 """
-for some reason, chunk 2 is needed to prevent `corrupted size vs. prev size` error when freeing chunk 3
+fake chunk 2 is needed to show that fake chunk 1 is in use to prevent forward
+consolidation which could throw `corrupted size vs. prev size` error when
+freeing fake chunk 3
 
 fake chunk 3 (large)
 fake chunk 1
